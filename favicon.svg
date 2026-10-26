@@ -1,0 +1,39 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff334f"/>
+      <stop offset="100%" stop-color="#a80020"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark futuristic background -->
+  <rect width="64" height="64" rx="15" fill="#08080c"/>
+
+  <!-- Original spider-inspired emblem -->
+  <g fill="none" stroke="url(#red)" stroke-width="4"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 25 L32 12"/>
+    <path d="M25 28 L15 19 L10 19"/>
+    <path d="M23 35 L12 35 L7 42"/>
+    <path d="M25 41 L18 50 L12 52"/>
+    <path d="M39 28 L49 19 L54 19"/>
+    <path d="M41 35 L52 35 L57 42"/>
+    <path d="M39 41 L46 50 L52 52"/>
+  </g>
+
+  <!-- Spider body -->
+  <path d="M32 20
+           C25 24 23 31 26 37
+           L32 45
+           L38 37
+           C41 31 39 24 32 20Z"
+        fill="url(#red)"/>
+
+  <!-- White eye highlights -->
+  <path d="M28 29 L31 32 L28 35Z" fill="#fff"/>
+  <path d="M36 29 L33 32 L36 35Z" fill="#fff"/>
+
+  <!-- Tech core -->
+  <circle cx="32" cy="39" r="2" fill="#ff5268"/>
+</svg>

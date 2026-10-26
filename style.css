@@ -1851,3 +1851,63 @@ section {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ========================================
+   SPIDEY-GO — CUSTOM NEON SCROLLBAR
+======================================== */
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ff334f #08080c;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08080c;
+  border-left: 1px solid rgba(255, 51, 79, 0.12);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #ff334f 0%,
+    #b10f2e 50%,
+    #65091c 100%
+  );
+  border: 2px solid #08080c;
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(255, 51, 79, 0.45);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #ff6075 0%,
+    #ff334f 55%,
+    #d7193f 100%
+  );
+  box-shadow: 0 0 16px rgba(255, 51, 79, 0.8);
+}
+
+::-webkit-scrollbar-corner {
+  background: #08080c;
+}
+
+/* Smooth page scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+

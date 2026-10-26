@@ -1911,3 +1911,35 @@ html {
   }
 }
 
+/* SPIDEY-GO — unify chat scrollbar */
+.chat-messages {
+  scrollbar-width: thin;
+  scrollbar-color: #ff334f #0e0e14;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #0e0e14;
+  border-left: 1px solid rgba(255, 51, 79, 0.12);
+  border-radius: 999px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #ff647a,
+    #ff334f,
+    #a80020
+  );
+  border: 2px solid #0e0e14;
+  border-radius: 999px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #ff647a;
+  box-shadow: 0 0 12px rgba(255, 51, 79, 0.7);
+}
+

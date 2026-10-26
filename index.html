@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08080c">
+  <meta name="description" content="SPIDEY-GO — Put It On. Become It. Explore a futuristic superhero suit concept with an AI sidekick.">
+  <title>SPIDEY-GO | Put It On. Become It.</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/script.js" defer></script>
+</head>
+
+<body>
+  
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress-track" aria-hidden="true">
+  <div id="scroll-progress-bar"></div>
+</div>
+
+  
+<!-- SPIDEY-GO SPLASH SCREEN -->
+<div id="splash-screen" class="splash-screen" role="status" aria-label="Loading SPIDEY-GO">
+  <div class="splash-grid"></div>
+
+  <div class="splash-content">
+    <div class="splash-emblem">
+      <img src="/favicon.svg" alt="" width="88" height="88">
+    </div>
+
+    <p class="splash-overline">SYSTEM INITIALIZATION</p>
+
+    <h1 class="splash-title">
+      SPIDEY<span>-GO</span>
+    </h1>
+
+    <p class="splash-tagline">PUT IT ON. BECOME IT.</p>
+
+    <div class="splash-loader">
+      <div class="splash-loader-fill"></div>
+    </div>
+
+    <p class="splash-status" id="splash-status">SUITING UP...</p>
+  </div>
+
+  <div class="splash-version">SPIDEY-GO // SYSTEM 001</div>
+</div>
+
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="navbar">
+    <a class="brand" href="#home" aria-label="SPIDEY-GO home">
+      <span class="brand-icon">S</span>
+      <span>SPIDEY<span class="brand-accent">-GO</span></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#features">Features</a>
+      <a href="#technology">Technology</a>
+      <a href="#ai">AI Sidekick</a>
+    </nav>
+
+    <a class="nav-cta" href="#ai">Meet Your AI <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          THE NEXT-GEN HERO EXPERIENCE
+        </div>
+
+        <p class="eyebrow">YOUR WORLD. YOUR RULES.</p>
+
+        <h1>
+          PUT IT ON.<br>
+          <span class="gradient-text">BECOME IT.</span>
+        </h1>
+
+        <p class="hero-description">
+          Meet SPIDEY-GO — a futuristic superhero-inspired technology
+          concept combining a bold suit aesthetic, smart interfaces,
+          and an AI sidekick built for your imagination.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#technology">
+            Explore the Tech <span>↗</span>
+          </a>
+          <a class="button button-secondary" href="#ai">
+            Talk to Your AI <span>⌁</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <strong>01</strong>
+            <span>HERO PROJECT</span>
+          </div>
+          <div>
+            <strong>AI</strong>
+            <span>SMART SIDEKICK</span>
+          </div>
+          <div>
+            <strong>∞</strong>
+            <span>IMAGINATION</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="SPIDEY-GO emblem artwork">
+        <div class="orbit orbit-outer"></div>
+        <div class="orbit orbit-inner"></div>
+
+        <div class="hero-emblem">
+          <svg viewBox="0 0 240 280" role="img"
+               aria-label="Original futuristic spider-inspired emblem">
+            <defs>
+              <linearGradient id="emblemRed" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ff536b"/>
+                <stop offset="100%" stop-color="#b30027"/>
+              </linearGradient>
+            </defs>
+            <g fill="none" stroke="url(#emblemRed)"
+               stroke-width="10" stroke-linecap="round"
+               stroke-linejoin="round">
+              <path d="M120 105 L120 25"/>
+              <path d="M98 115 L53 70 L22 70"/>
+              <path d="M91 145 L43 145 L17 177"/>
+              <path d="M98 166 L64 220 L35 235"/>
+              <path d="M142 115 L187 70 L218 70"/>
+              <path d="M149 145 L197 145 L223 177"/>
+              <path d="M142 166 L176 220 L205 235"/>
+            </g>
+            <path d="M120 82
+                     C84 100 79 137 98 166
+                     L120 203 L142 166
+                     C161 137 156 100 120 82Z"
+                  fill="url(#emblemRed)"/>
+            <path d="M100 119 L116 135 L103 151Z" fill="#fff"/>
+            <path d="M140 119 L124 135 L137 151Z" fill="#fff"/>
+          </svg>
+        </div>
+
+        <div class="floating-card card-top">
+          <span class="mini-dot"></span>
+          <div>
+            <strong>SYSTEM ONLINE</strong>
+            <small>SPIDEY-GO CORE</small>
+          </div>
+        </div>
+
+        <div class="floating-card card-bottom">
+          <span class="card-symbol">⌁</span>
+          <div>
+            <strong>AI SIDEKICK</strong>
+            <small>READY WHEN YOU ARE</small>
+          </div>
+        </div>
+
+        <p class="visual-caption">DESIGNED FOR THE FUTURE.</p>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Project highlights">
+      <div>
+        <span>✳ SUIT CONCEPT</span>
+        <span>✳ SMART AI</span>
+        <span>✳ FUTURE TECH</span>
+        <span>✳ HERO MODE</span>
+        <span>✳ SUIT CONCEPT</span>
+        <span>✳ SMART AI</span>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-heading">
+        <p class="eyebrow">BUILT DIFFERENT</p>
+        <h2>MORE THAN A <span class="gradient-text">SUIT.</span></h2>
+        <p>
+          A concept for combining superhero imagination with modern
+          software, AI, and futuristic interface design.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">⌘</div>
+          <p class="feature-number">01 / INTERFACE</p>
+          <h3>Mission Control</h3>
+          <p>
+            Imagine a central dashboard for suit status, mission notes,
+            system information, and customizable tools.
+          </p>
+          <span class="feature-tag">SMART INTERFACE</span>
+        </article>
+
+        <article class="feature-card featured-card">
+          <div class="feature-icon">✳</div>
+          <p class="feature-number">02 / INTELLIGENCE</p>
+          <h3>Your AI Sidekick</h3>
+          <p>
+            An AI assistant designed to answer questions, help brainstorm,
+            explain code, and support creative missions.
+          </p>
+          <span class="feature-tag">GEMINI-POWERED CONCEPT</span>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">◈</div>
+          <p class="feature-number">03 / DESIGN</p>
+          <h3>Future Suit Lab</h3>
+          <p>
+            Explore original visual concepts, futuristic equipment ideas,
+            and a distinctive black-and-crimson identity.
+          </p>
+          <span class="feature-tag">CONCEPT DESIGN</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="technology-section" id="technology">
+      <div class="technology-copy">
+        <p class="eyebrow">THE TECH BEHIND THE MASK</p>
+        <h2>ENGINEERED IN<br><span class="gradient-text">CODE.</span></h2>
+        <p>
+          SPIDEY-GO is a software project exploring how a superhero-style
+          interface can meet modern web development and AI assistance.
+        </p>
+
+        <ul class="tech-list">
+          <li><span>✓</span> Responsive HTML, CSS, and JavaScript</li>
+          <li><span>✓</span> Flask backend for AI requests</li>
+          <li><span>✓</span> Gemini API integration concept</li>
+          <li><span>✓</span> Secure server-side API key handling</li>
+        </ul>
+
+        <a class="button button-primary" href="#ai">
+          Enter AI Lab <span>↗</span>
+        </a>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span>spidey-go / system</span>
+          <span class="terminal-lock">SECURE</span>
+        </div>
+
+        <div class="terminal-body">
+          <p class="terminal-muted">// SPIDEY-GO INITIALIZATION</p>
+          <p><span class="terminal-red">const</span> hero = {</p>
+          <p class="indent">name: <span class="terminal-green">"SPIDEY-GO"</span>,</p>
+          <p class="indent">mode: <span class="terminal-green">"READY"</span>,</p>
+          <p class="indent">assistant: <span class="terminal-green">"AI"</span>,</p>
+          <p class="indent">imagination: <span class="terminal-green">true</span></p>
+          <p>};</p>
+          <br>
+          <p><span class="terminal-red">function</span> <span class="terminal-blue">suitUp</span>() {</p>
+          <p class="indent">return <span class="terminal-green">"Your origin starts here."</span>;</p>
+          <p>}</p>
+          <br>
+          <p class="terminal-success"><span class="status-dot"></span> INTERFACE READY_</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-section" id="ai">
+      <div class="ai-heading">
+        <div class="ai-icon">⌁</div>
+        <p class="eyebrow">YOUR DIGITAL SIDEKICK</p>
+        <h2>HEY, <span class="gradient-text">HERO.</span></h2>
+        <p>
+          Ask a question, brainstorm an idea, or get help with your next
+          coding mission.
+        </p>
+      </div>
+
+      <div class="chat-panel">
+        <div class="chat-header">
+          <div class="chat-avatar">S</div>
+          <div class="chat-identity">
+            <strong>SPIDEY-GO AI</strong>
+            <span><span class="status-dot"></span> Assistant interface</span>
+          </div>
+          <span class="chat-label">AI LAB</span>
+        </div>
+
+        <div class="chat-messages" id="chatMessages" aria-live="polite">
+          <div class="message assistant-message">
+            <span class="message-avatar">S</span>
+            <div class="message-bubble">
+              Systems ready. 🕷️ I'm your SPIDEY-GO AI sidekick.
+              What are we building today?
+            </div>
+          </div>
+        </div>
+
+        <div class="suggestions">
+          <button type="button" class="suggestion"
+                  data-prompt="Help me brainstorm a futuristic superhero suit concept.">
+            Suit ideas
+          </button>
+          <button type="button" class="suggestion"
+                  data-prompt="Help me learn how to build a website with JavaScript.">
+            Coding help
+          </button>
+          <button type="button" class="suggestion"
+                  data-prompt="Help me plan the next features for SPIDEY-GO.">
+            Next features
+          </button>
+        </div>
+
+        <form class="chat-form" id="chatForm">
+          <label class="sr-only" for="chatInput">Message your AI sidekick</label>
+          <input
+            id="chatInput"
+            name="message"
+            type="text"
+            placeholder="Message your AI sidekick..."
+            maxlength="2000"
+            autocomplete="off"
+            required
+          >
+          <button type="submit" id="sendButton" aria-label="Send message">
+            <span>➤</span>
+          </button>
+        </form>
+
+        <p class="chat-disclaimer">
+          AI responses may be inaccurate. Don't enter passwords or private information.
+          AI chat requires a configured backend and API key.
+        </p>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <p class="eyebrow">EVERY LEGEND STARTS SOMEWHERE</p>
+      <h2>YOUR ORIGIN.<br><span class="gradient-text">YOUR STORY.</span></h2>
+      <a class="button button-primary" href="#home">Back to the Top ↑</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#home">
+      <span class="brand-icon">S</span>
+      <span>SPIDEY<span class="brand-accent">-GO</span></span>
+    </a>
+
+    <p>Built with code, creativity, and a little hero energy. ⚡</p>
+    <p class="copyright">© <span id="year">2026</span> Yahya-tech-AI · Independent fan-inspired concept.</p>
+    <p class="disclaimer">
+      SPIDEY-GO is an independent project and is not affiliated with or endorsed by Marvel.
+    </p>
+  </footer>
+</body>
+</html>

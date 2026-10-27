@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08080c" />
+    <title>Account | SPIDEY-GO</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./login.css" />
+    <script src="./login.js" defer></script>
+  </head>
+  <body>
+    <!-- SPIDEY-GO SPLASH SCREEN -->
+    <div
+      id="splash-screen"
+      class="splash-screen"
+      role="status"
+      aria-label="Loading SPIDEY-GO"
+    >
+      <div class="splash-grid"></div>
+
+      <div class="splash-content">
+        <div class="splash-emblem">
+          <img src="/favicon.svg" alt="" width="88" height="88" />
+        </div>
+
+        <p class="splash-overline">SYSTEM INITIALIZATION</p>
+
+        <h1 class="splash-title">SPIDEY<span>-GO</span></h1>
+
+        <p class="splash-tagline">PUT IT ON. BECOME IT.</p>
+
+        <div class="splash-loader">
+          <div class="splash-loader-fill"></div>
+        </div>
+
+        <p class="splash-status" id="splash-status">SUITING UP...</p>
+      </div>
+
+      <div class="splash-version">SPIDEY-GO // SYSTEM 001</div>
+    </div>
+
+    <main class="auth-layout">
+      <a class="brand" href="./index.html">
+        <span class="brand-icon">S</span>
+        SPIDEY<span class="red">-GO</span>
+      </a>
+
+      <section class="auth-card">
+        <p class="eyebrow">SPIDEY-GO IDENTITY SYSTEM</p>
+        <h1 id="formTitle">Welcome back.</h1>
+        <p class="subtitle" id="formSubtitle">
+          Sign in to access your AI sidekick and saved conversations.
+        </p>
+
+        <div class="mode-switch">
+          <button type="button" id="loginMode" class="mode active">
+            Sign in
+          </button>
+          <button type="button" id="registerMode" class="mode">
+            Create account
+          </button>
+        </div>
+
+        <form id="authForm">
+          <label for="displayName" id="nameLabel" hidden> Display name </label>
+          <input
+            id="displayName"
+            name="displayName"
+            type="text"
+            placeholder="Your display name"
+            autocomplete="nickname"
+            maxlength="40"
+            hidden
+          />
+
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="At least 10 characters"
+            autocomplete="current-password"
+            minlength="10"
+            required
+          />
+
+          <p
+            id="authStatus"
+            class="status"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <button class="submit-button" id="submitButton" type="submit">
+            Sign in securely <span>↗</span>
+          </button>
+        </form>
+
+        <p class="security-note">
+          Your password is handled by the secure server, never by browser
+          storage.
+        </p>
+        <a class="back-link" href="./index.html">← Back to SPIDEY-GO</a>
+      </section>
+
+      <p class="footer-note">PUT IT ON. BECOME IT. · SYSTEM 001</p>
+    </main>
+  </body>
+</html>

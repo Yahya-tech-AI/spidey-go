@@ -1,0 +1,22 @@
+{
+  "name": "spidey-go",
+  "version": "1.0.0",
+  "description": "**SPIDEY-GO** is a superhero-inspired wearable concept featuring a futuristic red-and-black design and a Gemini-powered AI sidekick.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yahya-tech-AI/spidey-go.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Yahya-tech-AI/spidey-go/issues"
+  },
+  "homepage": "https://github.com/Yahya-tech-AI/spidey-go#readme",
+  "dependencies": {
+    "openai": "^7.45.0"
+  }
+}

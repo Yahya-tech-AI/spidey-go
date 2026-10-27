@@ -1943,3 +1943,70 @@ html {
   box-shadow: 0 0 12px rgba(255, 51, 79, 0.7);
 }
 
+
+/* AI PERSONALIZATION */
+
+.ai-name-settings {
+  width: min(100% - 32px, 640px);
+  margin: 32px auto;
+  padding: 24px;
+  border: 1px solid rgba(255, 55, 80, 0.4);
+  border-radius: 16px;
+  background: #101018;
+  color: #f5f5f7;
+  box-sizing: border-box;
+}
+
+.ai-name-settings h2 {
+  margin-top: 0;
+  color: #ff4057;
+}
+
+.ai-name-settings p {
+  color: #b8b8c8;
+  line-height: 1.6;
+}
+
+.ai-name-settings label {
+  display: block;
+  margin: 16px 0 8px;
+  font-weight: 600;
+}
+
+.ai-name-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ai-name-controls input {
+  flex: 1 1 200px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #454554;
+  border-radius: 8px;
+  background: #08080e;
+  color: white;
+  font: inherit;
+}
+
+.ai-name-controls button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #e92743;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ai-name-controls button:hover {
+  background: #ff4057;
+}
+
+#aiNameStatus {
+  min-height: 1.5em;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}

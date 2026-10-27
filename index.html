@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#08080c">
-  <meta name="description" content="SPIDEY-GO — Put It On. Become It. Explore a futuristic superhero suit concept with an AI sidekick.">
+  <meta name="description"
+    content="SPIDEY-GO — Put It On. Become It. Explore a futuristic superhero suit concept with an AI sidekick.">
   <title>SPIDEY-GO | Put It On. Become It.</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/style.css">
-  <script src="/script.js" defer></script>
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="stylesheet" href="./style.css">
+<script src="./script.js" defer></script>
 </head>
 
 <body>
-  
-<!-- SCROLL PROGRESS -->
-<div class="scroll-progress-track" aria-hidden="true">
-  <div id="scroll-progress-bar"></div>
-</div>
 
-  
-<!-- SPIDEY-GO SPLASH SCREEN -->
-<div id="splash-screen" class="splash-screen" role="status" aria-label="Loading SPIDEY-GO">
-  <div class="splash-grid"></div>
-
-  <div class="splash-content">
-    <div class="splash-emblem">
-      <img src="/favicon.svg" alt="" width="88" height="88">
-    </div>
-
-    <p class="splash-overline">SYSTEM INITIALIZATION</p>
-
-    <h1 class="splash-title">
-      SPIDEY<span>-GO</span>
-    </h1>
-
-    <p class="splash-tagline">PUT IT ON. BECOME IT.</p>
-
-    <div class="splash-loader">
-      <div class="splash-loader-fill"></div>
-    </div>
-
-    <p class="splash-status" id="splash-status">SUITING UP...</p>
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress-track" aria-hidden="true">
+    <div id="scroll-progress-bar"></div>
   </div>
 
-  <div class="splash-version">SPIDEY-GO // SYSTEM 001</div>
-</div>
+
+  <!-- SPIDEY-GO SPLASH SCREEN -->
+  <div id="splash-screen" class="splash-screen" role="status" aria-label="Loading SPIDEY-GO">
+    <div class="splash-grid"></div>
+
+    <div class="splash-content">
+      <div class="splash-emblem">
+        <img src="/favicon.svg" alt="" width="88" height="88">
+      </div>
+
+      <p class="splash-overline">SYSTEM INITIALIZATION</p>
+
+      <h1 class="splash-title">
+        SPIDEY<span>-GO</span>
+      </h1>
+
+      <p class="splash-tagline">PUT IT ON. BECOME IT.</p>
+
+      <div class="splash-loader">
+        <div class="splash-loader-fill"></div>
+      </div>
+
+      <p class="splash-status" id="splash-status">SUITING UP...</p>
+    </div>
+
+    <div class="splash-version">SPIDEY-GO // SYSTEM 001</div>
+  </div>
 
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
@@ -115,32 +117,28 @@
         <div class="orbit orbit-inner"></div>
 
         <div class="hero-emblem">
-          <svg viewBox="0 0 240 280" role="img"
-               aria-label="Original futuristic spider-inspired emblem">
+          <svg viewBox="0 0 240 280" role="img" aria-label="Original futuristic spider-inspired emblem">
             <defs>
               <linearGradient id="emblemRed" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#ff536b"/>
-                <stop offset="100%" stop-color="#b30027"/>
+                <stop offset="0%" stop-color="#ff536b" />
+                <stop offset="100%" stop-color="#b30027" />
               </linearGradient>
             </defs>
-            <g fill="none" stroke="url(#emblemRed)"
-               stroke-width="10" stroke-linecap="round"
-               stroke-linejoin="round">
-              <path d="M120 105 L120 25"/>
-              <path d="M98 115 L53 70 L22 70"/>
-              <path d="M91 145 L43 145 L17 177"/>
-              <path d="M98 166 L64 220 L35 235"/>
-              <path d="M142 115 L187 70 L218 70"/>
-              <path d="M149 145 L197 145 L223 177"/>
-              <path d="M142 166 L176 220 L205 235"/>
+            <g fill="none" stroke="url(#emblemRed)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M120 105 L120 25" />
+              <path d="M98 115 L53 70 L22 70" />
+              <path d="M91 145 L43 145 L17 177" />
+              <path d="M98 166 L64 220 L35 235" />
+              <path d="M142 115 L187 70 L218 70" />
+              <path d="M149 145 L197 145 L223 177" />
+              <path d="M142 166 L176 220 L205 235" />
             </g>
             <path d="M120 82
                      C84 100 79 137 98 166
                      L120 203 L142 166
-                     C161 137 156 100 120 82Z"
-                  fill="url(#emblemRed)"/>
-            <path d="M100 119 L116 135 L103 151Z" fill="#fff"/>
-            <path d="M140 119 L124 135 L137 151Z" fill="#fff"/>
+                     C161 137 156 100 120 82Z" fill="url(#emblemRed)" />
+            <path d="M100 119 L116 135 L103 151Z" fill="#fff" />
+            <path d="M140 119 L124 135 L137 151Z" fill="#fff" />
           </svg>
         </div>
 
@@ -302,30 +300,21 @@
 
         <div class="suggestions">
           <button type="button" class="suggestion"
-                  data-prompt="Help me brainstorm a futuristic superhero suit concept.">
+            data-prompt="Help me brainstorm a futuristic superhero suit concept.">
             Suit ideas
           </button>
-          <button type="button" class="suggestion"
-                  data-prompt="Help me learn how to build a website with JavaScript.">
+          <button type="button" class="suggestion" data-prompt="Help me learn how to build a website with JavaScript.">
             Coding help
           </button>
-          <button type="button" class="suggestion"
-                  data-prompt="Help me plan the next features for SPIDEY-GO.">
+          <button type="button" class="suggestion" data-prompt="Help me plan the next features for SPIDEY-GO.">
             Next features
           </button>
         </div>
 
         <form class="chat-form" id="chatForm">
           <label class="sr-only" for="chatInput">Message your AI sidekick</label>
-          <input
-            id="chatInput"
-            name="message"
-            type="text"
-            placeholder="Message your AI sidekick..."
-            maxlength="2000"
-            autocomplete="off"
-            required
-          >
+          <input id="chatInput" name="message" type="text" placeholder="Message your AI sidekick..." maxlength="2000"
+            autocomplete="off" required>
           <button type="submit" id="sendButton" aria-label="Send message">
             <span>➤</span>
           </button>
@@ -344,6 +333,27 @@
       <a class="button button-primary" href="#home">Back to the Top ↑</a>
     </section>
   </main>
+
+  <section class="ai-name-settings" aria-labelledby="aiNameTitle">
+    <h2 id="aiNameTitle">Give Your AI a Name</h2>
+    <p>Make your AI sidekick yours. Choose a name and save it!</p>
+
+    <form id="aiNameForm">
+      <label for="aiNameInput">Your AI's name</label>
+
+      <div class="ai-name-controls">
+        <input type="text" id="aiNameInput" maxlength="24" placeholder="e.g. Aro, Friday, Shadow..." autocomplete="off"
+          required />
+
+        <button type="submit" id="saveAINameButton">
+          Save Name
+        </button>
+      </div>
+
+      <p id="aiNameStatus" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
 
   <footer class="footer">
     <a class="brand footer-brand" href="#home">

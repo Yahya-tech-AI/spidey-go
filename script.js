@@ -11,11 +11,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   initializeSplashScreen();
   initializeScrollProgress();
+  initializeAIName(); // NEW
   initializeAIChat();
   initializeFooterYear();
   initializeNavigation();
 });
-
 
 /* ---------- 2. CINEMATIC SPLASH SCREEN ---------- */
 
@@ -26,22 +26,27 @@ function initializeSplashScreen() {
   if (!splash) return;
 
   const reducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
 
   if (status) {
     status.textContent = "SYSTEMS ONLINE";
   }
 
-  window.setTimeout(() => {
-    splash.classList.add("splash-hidden");
+  window.setTimeout(
+    () => {
+      splash.classList.add("splash-hidden");
 
-    window.setTimeout(() => {
-      splash.remove();
-    }, reducedMotion ? 0 : 750);
-  }, reducedMotion ? 250 : 2200);
+      window.setTimeout(
+        () => {
+          splash.remove();
+        },
+        reducedMotion ? 0 : 750,
+      );
+    },
+    reducedMotion ? 250 : 2200,
+  );
 }
-
 
 /* ---------- 3. SCROLL PROGRESSION ---------- */
 
@@ -55,15 +60,12 @@ function initializeScrollProgress() {
   function updateProgress() {
     const root = document.documentElement;
 
-    const scrollableHeight =
-      root.scrollHeight - window.innerHeight;
+    const scrollableHeight = root.scrollHeight - window.innerHeight;
 
-    const progress = scrollableHeight > 0
-      ? (window.scrollY / scrollableHeight) * 100
-      : 0;
+    const progress =
+      scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
 
-    progressBar.style.width =
-      `${Math.min(100, Math.max(0, progress))}%`;
+    progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
 
     scheduled = false;
   }
@@ -76,7 +78,7 @@ function initializeScrollProgress() {
   }
 
   window.addEventListener("scroll", requestUpdate, {
-    passive: true
+    passive: true,
   });
 
   window.addEventListener("resize", requestUpdate);
@@ -86,8 +88,83 @@ function initializeScrollProgress() {
   updateProgress();
 }
 
+/* ---------- AI PERSONALIZATION ---------- */
 
-/* ---------- 4. AI CHAT ---------- */
+let spideyAIName = "SPIDEY-GO";
+
+function initializeAIName() {
+  const form = document.getElementById("aiNameForm");
+  const input = document.getElementById("aiNameInput");
+  const status = document.getElementById("aiNameStatus");
+
+  // Load the saved name from this browser.
+  try {
+    const savedName = localStorage.getItem("spidey-go-ai-name");
+
+    if (savedName && savedName.trim()) {
+      spideyAIName = savedName.trim().slice(0, 24);
+    }
+  } catch (error) {
+    console.warn("Could not read the saved AI name.");
+  }
+
+  if (input) {
+    input.value = spideyAIName;
+  }
+
+  if (status) {
+    status.textContent = `Your AI's current name is ${spideyAIName}.`;
+  }
+
+  if (!form || !input) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const newName = input.value.trim();
+
+    if (!newName || newName.length > 24) {
+      if (status) {
+        status.textContent = "Enter a name between 1 and 24 characters.";
+      }
+      return;
+    }
+
+    try {
+      localStorage.setItem("spidey-go-ai-name", newName);
+      spideyAIName = newName;
+
+      if (status) {
+        status.textContent = `Saved! Your AI is now called ${spideyAIName}.`;
+      }
+
+      // Update the names and avatars of existing AI messages.
+      document
+        .querySelectorAll("#chatMessages .assistant-message")
+        .forEach((row) => {
+          const nameLabel = row.querySelector(".message-sender-name");
+
+          if (nameLabel) {
+            nameLabel.textContent = spideyAIName;
+          }
+
+          const avatar = row.querySelector(".message-avatar");
+
+          if (avatar) {
+            avatar.textContent = spideyAIName.charAt(0).toUpperCase();
+            avatar.setAttribute("aria-label", spideyAIName);
+          }
+        });
+    } catch (error) {
+      if (status) {
+        status.textContent =
+          "Could not save the name. Check your browser storage settings.";
+      }
+    }
+  });
+}
+
+/* ---------- 5. AI CHAT ---------- */
 
 function initializeAIChat() {
   const form = document.getElementById("chatForm");
@@ -104,9 +181,8 @@ function initializeAIChat() {
   /* Create chat messages safely using textContent. */
   function addMessage(text, sender) {
     const row = document.createElement("div");
-    row.className = sender === "user"
-      ? "message user-message"
-      : "message assistant-message";
+    row.className =
+      sender === "user" ? "message user-message" : "message assistant-message";
 
     const avatar = document.createElement("span");
     avatar.className = "message-avatar";
@@ -131,7 +207,7 @@ function initializeAIChat() {
 
     sendButton.setAttribute(
       "aria-label",
-      sending ? "Waiting for AI response" : "Send message"
+      sending ? "Waiting for AI response" : "Send message",
     );
 
     sendButton.innerHTML = sending ? "<span>…</span>" : "<span>➤</span>";
@@ -145,7 +221,7 @@ function initializeAIChat() {
     if (cleanMessage.length > 2000) {
       addMessage(
         "That message is too long. Please keep it under 2,000 characters.",
-        "assistant"
+        "assistant",
       );
       return;
     }
@@ -156,7 +232,7 @@ function initializeAIChat() {
 
     const waitingMessage = addMessage(
       "Connecting to the AI sidekick...",
-      "assistant"
+      "assistant",
     );
 
     activeController = new AbortController();
@@ -178,19 +254,19 @@ function initializeAIChat() {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: cleanMessage
+          message: cleanMessage,
         }),
-        signal: activeController.signal
+        signal: activeController.signal,
       });
 
       const data = await response.json().catch(() => ({}));
 
       if (!response.ok) {
         throw new Error(
-          data.error || `AI server returned HTTP ${response.status}.`
+          data.error || `AI server returned HTTP ${response.status}.`,
         );
       }
 
@@ -200,7 +276,6 @@ function initializeAIChat() {
 
       waitingMessage.querySelector(".message-bubble").textContent =
         data.reply.trim();
-
     } catch (error) {
       const bubble = waitingMessage.querySelector(".message-bubble");
 
@@ -216,7 +291,6 @@ function initializeAIChat() {
       }
 
       console.error("[SPIDEY-GO AI]", error);
-
     } finally {
       window.clearTimeout(timeoutId);
       activeController = null;
@@ -246,8 +320,7 @@ function initializeAIChat() {
   });
 }
 
-
-/* ---------- 5. FOOTER YEAR ---------- */
+/* ---------- 6. FOOTER YEAR ---------- */
 
 function initializeFooterYear() {
   const yearElement = document.getElementById("year");
@@ -257,13 +330,10 @@ function initializeFooterYear() {
   }
 }
 
-
-/* ---------- 6. NAVIGATION ---------- */
+/* ---------- 7. NAVIGATION ---------- */
 
 function initializeNavigation() {
-  const internalLinks = document.querySelectorAll(
-    'a[href^="#"]'
-  );
+  const internalLinks = document.querySelectorAll('a[href^="#"]');
 
   internalLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -278,10 +348,10 @@ function initializeNavigation() {
       event.preventDefault();
 
       target.scrollIntoView({
-        behavior: window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
-        ).matches ? "auto" : "smooth",
-        block: "start"
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+        block: "start",
       });
 
       if (history.replaceState) {
